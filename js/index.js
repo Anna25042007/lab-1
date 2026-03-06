@@ -202,12 +202,24 @@ function setupGrades() {
     let letter;
     if (average >= 90) {
       letter = "A";
-    } else if (average >= 75) {
+    } 
+    else if (average >= 80) {
       letter = "B";
-    } else if (average >= 60) {
+    } 
+    else if (average >= 70) {
       letter = "C";
-    } else {
+    } 
+    else if (average >= 60){
       letter = "D";
+      }
+    else if (average >= 50){
+      letter = "E";
+    }
+    else if (average >= 35){
+      letter = "Fx";
+    }
+    else {
+      letter = "F";
     }
 
     const html = `
