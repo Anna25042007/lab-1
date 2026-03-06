@@ -4,8 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
   setupGrades();
 });
 
-// ---------------- Навігація між задачами ----------------
-
 function setupNavigation() {
   const buttons = document.querySelectorAll(".nav-btn");
   const divisibilitySection = document.getElementById("divisibility-section");
@@ -14,8 +12,6 @@ function setupNavigation() {
   buttons.forEach(function (button) {
     button.addEventListener("click", function () {
       const target = button.dataset.target;
-
-      // показуємо потрібну секцію
       if (target === "divisibility-section") {
         divisibilitySection.classList.remove("hidden");
         gradeSection.classList.add("hidden");
@@ -26,8 +22,6 @@ function setupNavigation() {
     });
   });
 }
-
-// ---------------- Задача 1: подільність ----------------
 
 function setupDivisibility() {
   const form = document.getElementById("divisibility-form");
@@ -56,7 +50,6 @@ function setupDivisibility() {
       return;
     }
 
-    // сума цифр і остання цифра
     const str = Math.abs(number).toString();
     let digitsSum = 0;
     for (let i = 0; i < str.length; i++) {
@@ -64,7 +57,6 @@ function setupDivisibility() {
     }
     const lastDigit = Number(str[str.length - 1]);
 
-    // перевірка подільності
     const divisors = [
       {
         d: 2,
@@ -142,8 +134,6 @@ function setupDivisibility() {
   }
 }
 
-// ---------------- Задача 2: калькулятор успішності ----------------
-
 function setupGrades() {
   const form = document.getElementById("grade-form");
   const input = document.getElementById("grades-input");
@@ -194,7 +184,6 @@ function setupGrades() {
       return;
     }
 
-    // статистика
     let min = grades[0];
     let max = grades[0];
     let sum = 0;
@@ -210,7 +199,6 @@ function setupGrades() {
     const averageRaw = sum / count;
     const average = Math.round(averageRaw * 10) / 10;
 
-    // літера за середнім балом
     let letter;
     if (average >= 90) {
       letter = "A";
